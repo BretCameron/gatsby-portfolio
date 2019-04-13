@@ -1,9 +1,9 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import BackgroundImage from 'gatsby-background-image'
 import TechIcon from "../components/TechIcon"
 import Service from "../components/Service"
 import Testimonial from "../components/Testimonial"
-import BackgroundImage from 'gatsby-background-image'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -90,6 +90,27 @@ class IndexPage extends React.Component {
           }
         }
       }
+      writingBG:file(relativePath:{eq:"writing.jpg"}) {
+        childImageSharp {
+          fluid (maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      webdevBG:file(relativePath:{eq:"webdev.jpg"}) {
+        childImageSharp {
+          fluid (maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      designBG:file(relativePath:{eq:"design.jpg"}) {
+        childImageSharp {
+          fluid (maxWidth: 500) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
   }
 `
       } render={(data) => (
@@ -97,7 +118,7 @@ class IndexPage extends React.Component {
           <Layout>
             <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
             <div style={{ textAlign: `center` }}>
-              <BackgroundImage Tag="section"
+              <BackgroundImage tag="section"
                 style={{
                   // marginBottom: `40px`,
                   color: `white`,
@@ -234,7 +255,7 @@ class IndexPage extends React.Component {
 
 
 
-              <BackgroundImage Tag="section"
+              {/* <BackgroundImage tag="section"
                 style={{
                   // padding: `20px 0 0 0`,
                   color: `white`,
@@ -246,38 +267,54 @@ class IndexPage extends React.Component {
                 backgroundColor={`orange`}
               >
                 <h3 style={{ margin: `15px 0` }}>Services</h3>
-                {/* <p style={{ maxWidth: `600px`, margin: `0 auto` }}>I do freelance and contract work, mainly focusing on the following:</p> */}
-              </BackgroundImage>
+              </BackgroundImage> */}
+
 
               <div id="service-grid">
 
-                <Service
-                  offset="20"
-                  title="Design"
-                  image={data.design}
-                  content="I have experience creating logos, adverts for online and print, as well as other branding and marketing content."
-                />
-                <Service
-                  offset="0"
-                  title="Web Development"
-                  image={data.webdev}
-                  content="I'm experienced at developing front-end web experiences using React, Next.js and Gatsby. I also have experience using WordPress as a standalone or decoupled CMS."
-                />
-                <Service
-                  offset="20"
-                  title="Writing"
-                  image={data.writing}
-                  content="I have written for a number of brands and individuals, especially in the tech space. I'm also a top tech author on Medium."
-                />
-                {/* <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>1.<br />Web<br />Development</div>
-                <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>2.<br />Design</div>
-                <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>3.<br />Writing</div> */}
+                <BackgroundImage
+                  style={{ color: `white` }}
+                  fluid={data.designBG.childImageSharp.fluid}
+                  backgroundColor={`#000`}
+                >
+                  <Service
+                    offset="20"
+                    title="Design"
+                    icon={data.design}
+                    content="I have experience creating logos, adverts for online and print, as well as other branding and marketing content."
+                  />
+                </BackgroundImage>
+
+                <BackgroundImage
+                  style={{ color: `white` }}
+                  fluid={data.webdevBG.childImageSharp.fluid}
+                  backgroundColor={`#000`}
+                ><Service
+                    offset="0"
+                    title="Web Development"
+                    icon={data.webdev}
+                    content="I'm experienced at developing front-end web experiences using React, Next.js and Gatsby. I also have experience using WordPress as a standalone or decoupled CMS."
+                  />
+                </BackgroundImage>
+
+                <BackgroundImage
+                  style={{ color: `white` }}
+                  fluid={data.writingBG.childImageSharp.fluid}
+                  backgroundColor={`#000`}
+                >
+                  <Service
+                    offset="20"
+                    title="Writing"
+                    icon={data.writing}
+                    content="I have written for a number of brands and individuals, especially in the tech space. I'm also a top tech author on Medium."
+                  />
+                </BackgroundImage>
               </div>
 
 
               <BackgroundImage
                 id="contact-me"
-                tag="Section"
+                tag="section"
                 fluid={data.background.childImageSharp.fluid}
                 backgroundColor={`#000`}
               >
