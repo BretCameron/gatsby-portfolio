@@ -83,6 +83,13 @@ class IndexPage extends React.Component {
           }
         }
       }
+      orange:file(relativePath:{eq:"orange2.jpg"}) {
+        childImageSharp {
+          fluid (maxWidth: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
   }
 `
       } render={(data) => (
@@ -92,7 +99,7 @@ class IndexPage extends React.Component {
             <div style={{ textAlign: `center` }}>
               <BackgroundImage Tag="section"
                 style={{
-                  marginBottom: `40px`,
+                  // marginBottom: `40px`,
                   color: `white`,
                   height: `auto`,
                   width: `100%`,
@@ -114,37 +121,14 @@ class IndexPage extends React.Component {
                   textTransform: `uppercase`
                 }}>Blog &amp; Portfolio</h2>
 
-                <p style={{ maxWidth: `400px`, margin: `50px auto` }}>Welcome to my website! I’m a web developer, designer and writer based in London, and this is the home of my blog and portfolio.</p>
-                <br />
               </BackgroundImage>
 
+              <h3 style={{ margin: `50px 0` }}>About Me</h3>
+              <p style={{ maxWidth: `600px`, margin: `50px auto` }}>Welcome to my website! I’m a web developer, designer and writer based in London, and this is the home of my blog and portfolio.</p>
+              <br />
 
-              <h3>Services</h3>
-              <p style={{ maxWidth: `600px`, margin: `0 auto 25px auto` }}>I do freelance and contract work, mainly focusing on the following:</p>
 
-              <div style={{ display: `flex`, flex: `1 1 0`, justifyContent: `center`, padding: `0 0 30px 0` }}>
-                <Service
-                  offset="20"
-                  title="Design"
-                  image={data.design}
-                  content="I have experience creating logos, adverts for online and print, as well as other branding and marketing content."
-                />
-                <Service
-                  offset="0"
-                  title="Web Development"
-                  image={data.webdev}
-                  content="I'm experienced at developing front-end web experiences using React, Next.js and Gatsby. I also have experience using WordPress as a standalone or decoupled CMS."
-                />
-                <Service
-                  offset="20"
-                  title="Writing"
-                  image={data.writing}
-                  content="I have written for a number of brands and individuals, especially in the tech space. I'm also a top tech author on Medium."
-                />
-                {/* <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>1.<br />Web<br />Development</div>
-                <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>2.<br />Design</div>
-                <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>3.<br />Writing</div> */}
-              </div>
+
 
 
               <br />
@@ -249,6 +233,48 @@ class IndexPage extends React.Component {
               <br />
 
 
+
+              <BackgroundImage Tag="section"
+                style={{
+                  // padding: `20px 0 0 0`,
+                  color: `white`,
+                  height: `auto`,
+                  width: `100%`,
+                  transformOrigin: `top left`,
+                }}
+                fluid={data.orange.childImageSharp.fluid}
+                backgroundColor={`orange`}
+              >
+                <h3 style={{ margin: `15px 0` }}>Services</h3>
+                {/* <p style={{ maxWidth: `600px`, margin: `0 auto` }}>I do freelance and contract work, mainly focusing on the following:</p> */}
+              </BackgroundImage>
+
+              <div id="service-grid">
+
+                <Service
+                  offset="20"
+                  title="Design"
+                  image={data.design}
+                  content="I have experience creating logos, adverts for online and print, as well as other branding and marketing content."
+                />
+                <Service
+                  offset="0"
+                  title="Web Development"
+                  image={data.webdev}
+                  content="I'm experienced at developing front-end web experiences using React, Next.js and Gatsby. I also have experience using WordPress as a standalone or decoupled CMS."
+                />
+                <Service
+                  offset="20"
+                  title="Writing"
+                  image={data.writing}
+                  content="I have written for a number of brands and individuals, especially in the tech space. I'm also a top tech author on Medium."
+                />
+                {/* <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>1.<br />Web<br />Development</div>
+                <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>2.<br />Design</div>
+                <div style={{ width: `300px`, padding: `0px 20px 50px 20px` }}>3.<br />Writing</div> */}
+              </div>
+
+
               <BackgroundImage
                 id="contact-me"
                 tag="Section"
@@ -256,7 +282,7 @@ class IndexPage extends React.Component {
                 backgroundColor={`#000`}
               >
                 <h3>Contact Me</h3>
-                <p style={{ maxWidth: `400px`, margin: `0 auto 50px auto` }}>Feel free to get in-touch via email or using the contact form below.</p>
+                <p style={{ maxWidth: `600px`, margin: `0 auto 50px auto` }}>Feel free to get in-touch via email or using the contact form below.</p>
                 <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="bot-field" />
                   <div className="form-grid">

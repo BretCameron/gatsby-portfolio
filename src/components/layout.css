@@ -621,17 +621,11 @@ pre tt:after {
   }
 }
 
-/* SERVICE */
+/* CONTAINER */
 
-.service {
-  transition-duration: 200ms;
-  transition-timing-function: ease-out;
-}
-
-.service:hover {
-  transform: translateY(-10px);
-  transition-duration: 200ms;
-  transition-timing-function: ease-out;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* TECH ICON */
@@ -708,4 +702,23 @@ textarea {
 footer {
   background: #222;
   color: white;
+}
+
+/* SERVICE GRID */
+
+#service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.service {
+  justify-items: center;
+  background: rgb(0, 10, 65);
+  color: white;
+}
+
+.service-container {
+  padding: 10px;
+  max-width: 300px;
+  margin: 0 auto;
 }

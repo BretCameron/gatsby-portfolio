@@ -8,7 +8,7 @@ class Testimonial extends React.Component {
 
   render() {
     return (
-      <div className="service"
+      <div
         style={{
           width: `700px`,
           minWidth: `150px`,
