@@ -684,14 +684,15 @@ form {
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border: none;
-  padding: 0 10px;
 }
 
 input {
+  padding: 0 10px;
   height: 2rem;
 }
 
 textarea {
+  padding: 10px;
   height: 100px;
   resize: none;
 }
