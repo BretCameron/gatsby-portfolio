@@ -620,3 +620,46 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/* SERVICE */
+
+.service {
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+/* TECH ICON */
+
+.tech-icon {
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+.tech-icon:hover {
+  transform: translateY(-3px);
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+/*  FORM */
+
+form {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+form > label {
+  display: block;
+  text-align: left;
+}
+
+input,
+textarea {
+  width: 600px;
+}

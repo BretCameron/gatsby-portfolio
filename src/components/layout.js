@@ -26,21 +26,21 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
+
+        {/* <div
           style={{
             margin: `0 auto`,
             maxWidth: 960,
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
           }}
-        >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
+        > */}
+        <main>{children}</main>
+        <footer style={{ textAlign: `center` }}><hr />
+          © Bret Cameron {new Date().getFullYear()}<br /><span style={{ fontSize: `0.9rem` }}>Built with <i>React.js</i> and <i>Gatsby</i></span>
+          <br /><br />
+        </footer>
+        {/* </div> */}
       </>
     )}
   />
