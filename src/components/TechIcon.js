@@ -11,16 +11,16 @@ class TechIcon extends React.Component {
     if (/.svg$/.test(this.props.image.publicURL)) {
       return (
         <img className="tech-icon" id={this.props.title} onMouseOver={this.props.onMouseEnter} onMouseOut={this.props.onMouseLeave}
-          style={{ width: `50px`, padding: `0 5px` }}
-          src={this.props.image.publicURL}
+          style={{ width: `50px`, height: `50px`, padding: `0 5px` }}
+          src={this.props.image.publicURL} alt={this.props.title}
         />
       )
     } else {
       if (this.props.image.childImageSharp) {
         return (
           <div className="tech-icon" id={this.props.title} onMouseOver={this.props.onMouseEnter} onMouseOut={this.props.onMouseLeave}
-            style={{ width: `50px`, padding: `0 5px`, display: `inline-block`, transform: `translateY(-25px)` }}>
-            <Img fluid={this.props.image.childImageSharp.fluid}
+            style={{ width: `50px`, height: `50px`, padding: `0 5px`, display: `inline-block`, transform: `translateY(-25px)` }}>
+            <Img fluid={this.props.image.childImageSharp.fluid} alt={this.props.title}
             />
           </div>
         )

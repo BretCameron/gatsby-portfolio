@@ -1,9 +1,10 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from "gatsby-background-image"
 import TechIcon from "../components/TechIcon"
 import Service from "../components/Service"
 import Testimonial from "../components/Testimonial"
+import BlogSlider from "../components/BlogSlider"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -26,7 +27,12 @@ class IndexPage extends React.Component {
     this.setState(newState);
   }
 
+
+
   render() {
+
+    const url = 'icons/HTML.svg';
+
     return (
 
       <StaticQuery query={ /* GraphQL */
@@ -83,6 +89,13 @@ class IndexPage extends React.Component {
           }
         }
       }
+      background2:file(relativePath:{eq:"background.jpg"}) {
+        childImageSharp {
+          fluid (maxWidth: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       orange:file(relativePath:{eq:"orange2.jpg"}) {
         childImageSharp {
           fluid (maxWidth: 50) {
@@ -111,6 +124,16 @@ class IndexPage extends React.Component {
           }
         }
       }
+      icons:  allFile(filter:{ relativeDirectory:{eq: "icons"} }){
+    edges{
+      node{
+        relativePath
+        childImageSharp {
+          id
+        }
+      }
+    }
+  }
   }
 `
       } render={(data) => (
@@ -122,136 +145,137 @@ class IndexPage extends React.Component {
                 style={{
                   // marginBottom: `40px`,
                   color: `white`,
-                  height: `auto`,
+                  height: `100vh`,
                   width: `100%`,
                   transformOrigin: `top left`,
+                  display: `flex`,
+                  alignItems: `center`,
+                  justifyContent: `center`,
                 }}
                 fluid={data.background.childImageSharp.fluid}
                 backgroundColor={`#000`}
               >
 
-                <br />
-                <br />
-
-                <h1 style={{ margin: 0 }}>Bret Cameron</h1>
-                <h2 style={{
-                  fontWeight: `200`,
-                  fontSize: `1.4rem`,
-                  letterSpacing: `2.5px`,
-                  margin: `5px 0 50px 0`,
-                  textTransform: `uppercase`
-                }}>Blog &amp; Portfolio</h2>
+                <div>
+                  <h1 style={{ margin: 0 }}>Bret Cameron</h1>
+                  <h2 style={{
+                    fontWeight: `200`,
+                    fontSize: `1.4rem`,
+                    letterSpacing: `2.5px`,
+                    margin: `5px 0 50px 0`,
+                    textTransform: `uppercase`
+                  }}>Web Development</h2>
+                  <br />
+                  <br />
+                  <BlogSlider />
+                </div>
 
               </BackgroundImage>
 
-              <h3 style={{ margin: `50px 0` }}>About Me</h3>
-              <p style={{ maxWidth: `600px`, margin: `50px auto` }}>Welcome to my website! I’m a web developer, designer and writer based in London, and this is the home of my blog and portfolio.</p>
-              <br />
+              <div className="container">
 
 
 
+                <h3 style={{
+                  padding: `50px 0 15px 0`,
+                  margin: `0`,
+                  fontWeight: `bold`,
+                  textTransform: `uppercase`,
+                  // textAlign: `left`
+                }}>Welcome</h3>
+                <p style={{
+                  margin: `15px 0`,
+                  textAlign: `left`
+                }}>I’m Bret, a web developer, designer and writer based in London, and this is the home of my blog and portfolio.</p>
+                <p style={{
+                  margin: `15px 0`,
+                  textAlign: `left`
+                }}>I'm currently available for freelance and contract work. If you'd like to get in touch, use <a href="#contact-me">the contact form at the bottom of this page.</a></p>
+                <p style={{
+                  margin: `15px 0`,
+                  textAlign: `left`
+                }}>I have experience with the following web development technologies:
+                {/* <span style={{ fontStyle: `italic` }}>{this.state.techHover}</span> */}
+                </p>
+                <div style={{ textAlign: `left`, marginLeft: `-5px` }}>
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="HTML5"
+                    image={data.html}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="CSS3"
+                    image={data.css}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="JavaScript"
+                    image={data.js}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Bootstrap"
+                    image={data.bootstrap}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Sass (SCSS)"
+                    image={data.sass}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Git"
+                    image={data.git}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Command Line (Git Bash)"
+                    image={data.terminal}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="React.js"
+                    image={data.react}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Next.js"
+                    image={data.next}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Gatsby.js"
+                    image={data.gatsby}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="PHP"
+                    image={data.php}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="WordPress"
+                    image={data.wordpress}
+                  />
+                </div>
+                <p style={{ height: `1rem`, fontStyle: `italic`, margin: `0 0 40px 0` }}>{this.state.techHover}</p>
 
 
-              <br />
-              <br />
 
-
-
-              <h3>Technologies</h3>
-              <p style={{ maxWidth: `600px`, margin: `0 auto 25px auto` }}>I have experience with the following programming technologies:</p>
-
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="HTML5"
-                image={data.html}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="CSS3"
-                image={data.css}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="JavaScript"
-                image={data.js}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="Bootstrap"
-                image={data.bootstrap}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="Sass (SCSS)"
-                image={data.sass}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="Git"
-                image={data.git}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="Command Line (Git Bash)"
-                image={data.terminal}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="React.js"
-                image={data.react}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="Next.js"
-                image={data.next}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="Gatsby.js"
-                image={data.gatsby}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="PHP"
-                image={data.php}
-              />
-              <TechIcon
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                title="WordPress"
-                image={data.wordpress}
-              />
-
-              <p style={{ height: `1rem`, fontStyle: `italic`, margin: `0 0 40px 0` }}>{this.state.techHover}</p>
-
-
-              <br />
-
-              <h3>Testimonials</h3>
-              <p style={{ maxWidth: `600px`, margin: `0 auto 25px auto` }}>I have been lucky enough to receive some very kind words about my work:</p>
-
-              <div style={{ display: `flex`, justifyContent: `center` }} >
-                <Testimonial
-                  quote="One of the most brilliant and hardworking people that I know. I've worked with Bret on several projects at Fanbytes and have been left impressed by his creativity, diligence and quality of work. More than often I've seen him take on a task and go above and beyond to complete it. He can be a real asset to a team!"
-                  person="Miri Qylafi"
-                  title="Partnerships Manager, Fanbytes"
-                />
-              </div>
-
-
-              <br />
-              <br />
+              </div>{/* className="container"  */}
 
 
 
@@ -270,56 +294,96 @@ class IndexPage extends React.Component {
               </BackgroundImage> */}
 
 
-              <div id="service-grid">
+              <h3 style={{
+                padding: `50px 0 15px 0`,
+                margin: `0`,
+                fontWeight: `bold`,
+                textTransform: `uppercase`,
+                // textAlign: `left`
+              }}>Services</h3>
+              <div className="large-container">
+                <div id="service-grid">
 
-                <BackgroundImage
-                  style={{ color: `white` }}
-                  fluid={data.designBG.childImageSharp.fluid}
-                  backgroundColor={`#000`}
-                >
-                  <Service
-                    offset="20"
-                    title="Design"
-                    icon={data.design}
-                    content="I have experience creating logos, adverts for online and print, as well as other branding and marketing content."
-                  />
-                </BackgroundImage>
+                  <BackgroundImage
+                    style={{ color: `white` }}
+                    fluid={data.designBG.childImageSharp.fluid}
+                    backgroundColor={`#000`}
+                  >
+                    <Service
+                      offset="20"
+                      title="Design"
+                      icon={data.design}
+                      content="I design logos, static adverts for digital and print, as well as other branding content."
+                    />
+                  </BackgroundImage>
 
-                <BackgroundImage
-                  style={{ color: `white` }}
-                  fluid={data.webdevBG.childImageSharp.fluid}
-                  backgroundColor={`#000`}
-                ><Service
-                    offset="0"
-                    title="Web Development"
-                    icon={data.webdev}
-                    content="I'm experienced at developing front-end web experiences using React, Next.js and Gatsby. I also have experience using WordPress as a standalone or decoupled CMS."
-                  />
-                </BackgroundImage>
 
-                <BackgroundImage
-                  style={{ color: `white` }}
-                  fluid={data.writingBG.childImageSharp.fluid}
-                  backgroundColor={`#000`}
-                >
-                  <Service
-                    offset="20"
-                    title="Writing"
-                    icon={data.writing}
-                    content="I have written for a number of brands and individuals, especially in the tech space. I'm also a top tech author on Medium."
-                  />
-                </BackgroundImage>
+                  <BackgroundImage
+                    style={{ color: `white` }}
+                    fluid={data.webdevBG.childImageSharp.fluid}
+                    backgroundColor={`#000`}
+                  >
+                    <Service
+                      offset="0"
+                      title="Web Development"
+                      icon={data.webdev}
+                      content="I develop lightning-fast, modern websites using React – a powerful technology developed by Facebook."
+                    />
+                  </BackgroundImage>
+
+                  <BackgroundImage
+                    style={{ color: `white` }}
+                    fluid={data.writingBG.childImageSharp.fluid}
+                    backgroundColor={`#000`}
+                  >
+                    <Service
+                      offset="20"
+                      title="Writing"
+                      icon={data.writing}
+                      content="I write articles and copy, and I'm also a top tech author on Medium."
+                    />
+                  </BackgroundImage>
+                </div>
               </div>
 
+              <div className="container">
+                <br />
+                <br />
+                <h3 style={{
+                  padding: `50px 0 15px 0`,
+                  margin: `0`,
+                  fontWeight: `bold`,
+                  textTransform: `uppercase`,
+                  // textAlign: `left`
+                }}>Testimonials</h3>
+                <p style={{ maxWidth: `600px`, margin: `0 auto 25px auto`, textAlign: `center` }}>I have been lucky enough to receive some very kind words about my work:</p>
+
+                <div style={{ display: `flex`, justifyContent: `center` }} >
+                  <Testimonial
+                    quote="One of the most brilliant and hardworking people that I know. I've worked with Bret on several projects at Fanbytes and have been left impressed by his creativity, diligence and quality of work. More than often I've seen him take on a task and go above and beyond to complete it. He can be a real asset to a team!"
+                    person="Miri Qylafi"
+                    title="Partnerships Manager, Fanbytes"
+                  />
+                </div>
+
+
+                <br />
+                {/* <br /> */}
+              </div>{/* className="container"  */}
 
               <BackgroundImage
                 id="contact-me"
                 tag="section"
-                fluid={data.background.childImageSharp.fluid}
+                fluid={data.background2.childImageSharp.fluid}
                 backgroundColor={`#000`}
               >
-                <h3>Contact Me</h3>
-                <p style={{ maxWidth: `600px`, margin: `0 auto 50px auto` }}>Feel free to get in-touch via email or using the contact form below.</p>
+                <h3 style={{
+                  padding: `0 0 40px 0`,
+                  margin: `0`,
+                  fontWeight: `bold`,
+                  textTransform: `uppercase`,
+                  // textAlign: `left`
+                }}>Contact Me</h3>                <p style={{ maxWidth: `600px`, margin: `0 auto 50px auto` }}>Feel free to get in-touch via email or using the contact form below.</p>
                 <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="bot-field" />
                   <div className="form-grid">
