@@ -8,17 +8,40 @@ class BlogSlider extends React.Component {
     this.state = {
       articles: Object.values(articles),
       leftmostCard: 0,
-      rightmostCard: 5,
+      rightmostCard: 0,
       sliderInterval: 3,
       slide: 0,
       numberOfCards: Object.values(articles).length,
     };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.addBlogs = this.addBlogs.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handlePrevious = this.handlePrevious.bind(this);
     this.handleOpacity = this.handleOpacity.bind(this);
     this.createCircles = this.createCircles.bind(this);
     this.selectSlide = this.selectSlide.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    const { articles, leftmostCard, rightmostCard } = this.state;
+    const spaceAvailable = Math.floor(window.innerWidth / 360);
+    const currentCardsVisible = rightmostCard - leftmostCard;
+    const newLeftmostCard = Math.ceil(leftmostCard / spaceAvailable) * spaceAvailable;
+    this.setState({
+      leftmostCard: newLeftmostCard,
+      rightmostCard: newLeftmostCard + spaceAvailable,
+      sliderInterval: spaceAvailable,
+      slide: newLeftmostCard / spaceAvailable,
+    });
   }
 
   handleOpacity(index) {
@@ -54,6 +77,8 @@ class BlogSlider extends React.Component {
   }
 
   selectSlide(e) {
+    // work out how to handle beginning and end
+    // make sure the correct slide
     const index = Number(e.target.id);
     const { articles, leftmostCard, rightmostCard, numberOfCards, sliderInterval, slide } = this.state;
     if (slide !== index) {
