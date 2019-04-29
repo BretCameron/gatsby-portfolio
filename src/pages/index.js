@@ -140,37 +140,40 @@ class IndexPage extends React.Component {
         <>
           <Layout>
             <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-            <div style={{ textAlign: `center` }}>
+            <div>
               <BackgroundImage tag="section"
                 style={{
-                  // marginBottom: `40px`,
                   color: `white`,
                   height: `100vh`,
                   width: `100%`,
-                  transformOrigin: `top left`,
-                  display: `flex`,
-                  alignItems: `center`,
-                  justifyContent: `center`,
                 }}
                 fluid={data.background.childImageSharp.fluid}
                 backgroundColor={`#000`}
               >
 
-                <div>
-                  <h1 style={{ margin: 0 }}>Bret Cameron</h1>
+
+                <div style={{ textAlign: `center` }}>
+                  <h1 style={{ margin: `180px 0 0 0` }}>Bret Cameron</h1>
                   <h2 style={{
                     fontWeight: `200`,
                     fontSize: `1.4rem`,
                     letterSpacing: `2.5px`,
-                    margin: `5px 0 50px 0`,
+                    margin: `5px 0 100px 0`,
                     textTransform: `uppercase`
                   }}>Web Development</h2>
-                  <br />
-                  <br />
+                </div>
+
+                <div className="slider-container"
+                  style={{
+                    // background: `grey`, 
+                    width: `100%`,
+                  }}>
                   <BlogSlider />
                 </div>
 
+
               </BackgroundImage>
+
 
               <div className="container">
 

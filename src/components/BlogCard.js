@@ -11,10 +11,13 @@ class BlogCard extends React.Component {
     return (
       <>
         <div style={{
+          transition: `300ms ease-in-out`,
           margin: `10px 1px`,
-          maxWidth: `300px`,
-          boxShadow: `1px 1px 5px rgba(0,0,0,0.5)`,
-          borderRadius: `5px`
+          width: `300px`,
+          minWidth: `300px`,
+          // boxShadow: `1px 1px 5px rgba(0,0,0,0.5)`,
+          borderRadius: `5px`,
+          opacity: this.props.opacity,
         }}>
           <img style={{
             overflow: `none`,
