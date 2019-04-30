@@ -153,7 +153,7 @@ class IndexPage extends React.Component {
 
 
               <div style={{ textAlign: `center` }}>
-                <h1 style={{ padding: `10vh 0 0 0` }}>Bret Cameron</h1>
+                <h1 style={{ padding: `8vh 0 0 0` }}>Bret Cameron</h1>
                 <h2 style={{
                   fontWeight: `200`,
                   fontSize: `1.4rem`,

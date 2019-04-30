@@ -166,7 +166,7 @@ class IndexPage extends React.Component {
 
 
               <div style={{ textAlign: `center` }}>
-                <h1 style={{ padding: `10vh 0 0 0` }}>Bret Cameron</h1>
+                <h1 style={{ padding: `8vh 0 0 0` }}>Bret Cameron</h1>
                 <h2 style={{
                   fontWeight: `200`,
                   fontSize: `1.4rem`,
@@ -177,104 +177,103 @@ class IndexPage extends React.Component {
                 </h2>
               </div>
 
-              <div className="slider-container">
-                <div
-                  style={{
-                    color: `#DDD`,
-                    padding: `50px 0px 20px 0px`,
-                  }}>
-                  <p style={{
-                    margin: `15px 0`,
-                  }}>I’m Bret, a web developer, designer and writer based in London, and this is the home of my blog and portfolio.</p>
-                  <p style={{
-                    margin: `15px 0`,
-                  }}>I'm currently available for freelance and contract work. If you'd like to get in touch, use <a href="#contact-me"
-                    style={{
-                      color: `#DDD`
-                    }}>
-                      the contact form at the bottom of this page.
-                      </a>
-                  </p>
-                  <p style={{
-                    margin: `15px 0`,
-                  }}>I have experience with the following web development technologies:
-                  </p>
-                  <div style={{ marginLeft: `-5px` }}>
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="HTML5"
-                      image={data.html}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="CSS3"
-                      image={data.css}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="JavaScript"
-                      image={data.js}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="Bootstrap"
-                      image={data.bootstrap}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="Sass (SCSS)"
-                      image={data.sass}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="Git"
-                      image={data.git}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="Command Line (Git Bash)"
-                      image={data.terminal}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="React.js"
-                      image={data.react}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="Next.js"
-                      image={data.next}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="Gatsby.js"
-                      image={data.gatsby}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="PHP"
-                      image={data.php}
-                    />
-                    <TechIcon
-                      onMouseEnter={this.handleMouseEnter}
-                      onMouseLeave={this.handleMouseLeave}
-                      title="WordPress"
-                      image={data.wordpress}
-                    />
-                    <p style={{ height: `1rem`, fontStyle: `italic`, margin: `0 0 40px 0` }}>{this.state.techHover}</p>
-                  </div>
+              <div className="container"
+                style={{
+                  color: `#DDD`,
+                  padding: `50px 10px 20px 10px`,
+                }}>
 
+                <p style={{
+                  margin: `15px 0`,
+                }}>I’m Bret, a web developer, designer and writer based in London, and this is the home of my blog and portfolio.</p>
+                <p style={{
+                  margin: `15px 0`,
+                }}>I'm currently available for freelance and contract work. If you'd like to get in touch, use <a href="#contact-me"
+                  style={{
+                    color: `#DDD`
+                  }}>
+                    the contact form at the bottom of this page.
+                      </a>
+                </p>
+                <p style={{
+                  margin: `15px 0`,
+                }}>I have experience with the following web development technologies:
+                  </p>
+
+                <div style={{ marginLeft: `-5px` }}>
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="HTML5"
+                    image={data.html}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="CSS3"
+                    image={data.css}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="JavaScript"
+                    image={data.js}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Bootstrap"
+                    image={data.bootstrap}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Sass (SCSS)"
+                    image={data.sass}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Git"
+                    image={data.git}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Command Line (Git Bash)"
+                    image={data.terminal}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="React.js"
+                    image={data.react}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Next.js"
+                    image={data.next}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="Gatsby.js"
+                    image={data.gatsby}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="PHP"
+                    image={data.php}
+                  />
+                  <TechIcon
+                    onMouseEnter={this.handleMouseEnter}
+                    onMouseLeave={this.handleMouseLeave}
+                    title="WordPress"
+                    image={data.wordpress}
+                  />
+                  <p style={{ height: `1rem`, fontStyle: `italic`, margin: `0 0 40px 0` }}>{this.state.techHover}</p>
                 </div>
 
               </div>

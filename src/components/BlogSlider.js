@@ -62,7 +62,7 @@ class BlogSlider extends React.Component {
   handleTabIndex(index) {
     const { articles, leftmostCard, rightmostCard } = this.state;
     if (index >= leftmostCard && index < rightmostCard) {
-      return index + 1;
+      return 0;
     } else {
       return -1;
     }
