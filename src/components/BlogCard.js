@@ -180,34 +180,45 @@ class BlogCard extends React.Component {
         }`
       } render={(data) => (
         <>
-          <div style={{
-            transition: `300ms ease-in-out`,
-            margin: `10px 1px`,
-            width: `300px`,
-            minWidth: `300px`,
-            // boxShadow: `1px 1px 5px rgba(0,0,0,0.5)`,
-            borderRadius: `5px`,
-            opacity: this.props.opacity,
-          }}>
-            <Img style={{
-              overflow: `none`,
-              margin: 0,
-              width: `100%`,
-              height: `160px`,
-              objectFit: `cover`,
-            }}
-              fluid={data[this.props.query].childImageSharp.fluid}
-              alt={this.props.title}
-              className="blog-img" />
-            <i style={{
-              display: `inline-block`,
-              padding: `10px`,
-              margin: `0`
-            }}>{this.props.date} • {this.props.readTime}</i>
-            <h3 style={{
-              padding: `10px 0 30px 0`
-            }}>{this.props.title}</h3>
-          </div>
+          <a
+            href={this.props.link}
+            tabIndex={this.props.tabIndex}
+            style={{
+              color: `white`,
+              textDecoration: `none`
+            }}>
+            <div
+              style={{
+                transition: `220ms ease-in-out`,
+                margin: `10px 1px`,
+                width: `300px`,
+                minWidth: `300px`,
+                // boxShadow: `1px 1px 5px rgba(0,0,0,0.5)`,
+                borderRadius: `5px`,
+                opacity: this.props.opacity,
+              }}
+              className={this.props.class}
+            >
+
+              <Img style={{
+                overflow: `none`,
+                margin: 0,
+                width: `100%`,
+                height: `160px`,
+                objectFit: `cover`,
+              }}
+                fluid={data[this.props.query].childImageSharp.fluid}
+                alt={this.props.title}
+                className="blog-img" />
+              <i style={{
+                display: `inline-block`,
+                padding: `10px`,
+                margin: `0`
+              }}>{this.props.date} • {this.props.readTime}</i>
+              <h3 style={{
+                padding: `10px 0 30px 0`
+              }}>{this.props.title}</h3>
+            </div></a>
         </>
       )} />
     )

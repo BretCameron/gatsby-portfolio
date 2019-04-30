@@ -755,3 +755,16 @@ footer {
 .blog-img:hover {
   filter: brightness(1.2);
 }
+
+.blog-card {
+  transition: 50ms ease-in-out;
+  opacity: 1;
+}
+
+.blog-card-inactive {
+  opacity: 0.2;
+}
+
+.blog-card:hover {
+  transform: translateY(-15px);
+}
