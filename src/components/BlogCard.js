@@ -14,106 +14,166 @@ class BlogCard extends React.Component {
         graphql`{
           bigonotation:file(relativePath:{eq:"blog-posts/big-o-notation.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
           }
           }
           csstricks:file(relativePath:{eq:"blog-posts/css-tricks.png"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
           }
           }
           gatsbyimage:file(relativePath:{eq:"blog-posts/gatsby-image.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
           }
           }
           googleinterview:file(relativePath:{eq:"blog-posts/google-interview.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
           }
           }     
           headlesscms:file(relativePath:{eq:"blog-posts/headless-cms.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           howistarted:file(relativePath:{eq:"blog-posts/how-i-started.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           html:file(relativePath:{eq:"blog-posts/html.png"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           javascriptcpp:file(relativePath:{eq:"blog-posts/javascript-cpp.png"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           javascriptsets:file(relativePath:{eq:"blog-posts/javascript-sets.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           javascripttricks:file(relativePath:{eq:"blog-posts/javascript-tricks.png"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           reactjquery:file(relativePath:{eq:"blog-posts/react-jquery.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           technicalseo:file(relativePath:{eq:"blog-posts/technical-seo.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           vscode1:file(relativePath:{eq:"blog-posts/vscode1.png"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           vscode2:file(relativePath:{eq:"blog-posts/vscode2.jpeg"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
           wordpressreact:file(relativePath:{eq:"blog-posts/wordpress-react.png"}) {
           childImageSharp {
-          fluid (maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid (
+            maxWidth: 400
+            quality: 90
+            traceSVG: { background: "#000", color: "#222" }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
           }
           }
