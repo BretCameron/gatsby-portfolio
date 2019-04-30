@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
         {
-          background:file(relativePath:{eq:"josh-rose-506979-unsplash.jpg"}) {
+          background:file(relativePath:{eq:"background.jpg"}) {
             childImageSharp {
               fluid (maxWidth: 50) {
                 ...GatsbyImageSharpFluid
@@ -33,7 +33,7 @@ const Layout = ({ children }) => (
         <BackgroundImage
           tag="section"
           fluid={data.background.childImageSharp.fluid}
-          backgroundColor={`#000`}
+          backgroundColor={`#333`}
           style={{
             color: `white`,
             width: `100%`,
@@ -48,6 +48,8 @@ const Layout = ({ children }) => (
         >
           <main style={{
             flex: `auto`,
+            display: `block`,
+            position: `static`
           }}>
             <Navigation />
             {children}
@@ -55,7 +57,8 @@ const Layout = ({ children }) => (
           <footer style={{
             textAlign: `center`,
             flexShrink: 0,
-            background: `#000`
+            border: `none`,
+            // background: `#000`
           }}><hr />
             © Bret Cameron {new Date().getFullYear()}<br /><span style={{ fontSize: `0.9rem` }}>Built with <i>React.js</i> and <i>Gatsby</i></span>
             <br /><br />

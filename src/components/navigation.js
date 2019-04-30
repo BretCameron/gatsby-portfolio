@@ -4,17 +4,40 @@ import React from "react"
 
 const Navigation = ({ siteTitle }) => (
   <>
-    <nav>
-      <ul style={{
-        margin: 0,
-        padding: 0,
-        listStyle: `none`,
+    <div className="container">
+      <nav style={{
+        margin: `0 -20px 0px 0`,
       }}>
-        <li>About</li>
-        <li>Blog</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
+        <ul style={{
+          padding: `15px 0 0 0`,
+          margin: 0,
+          width: `100%`,
+          listStyle: `none`,
+          textAlign: `right`,
+          fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
+          textTransform: `uppercase`,
+          fontSize: `0.9rem`,
+        }}>
+          <Link to="/"><li style={{
+            display: `inline-block`,
+            padding: `0 20px`,
+          }}>Blog</li></Link>
+          <Link to="/about"><li style={{
+            display: `inline-block`,
+            padding: `0 20px`,
+          }}>About</li></Link>
+          <li style={{
+            display: `inline-block`,
+            padding: `0 20px`,
+          }}>Contact</li>
+        </ul>
+      </nav>
+      <hr
+        style={{
+          background: `#555`,
+        }}
+      />
+    </div>
   </>
 )
 

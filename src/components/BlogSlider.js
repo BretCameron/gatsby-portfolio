@@ -150,8 +150,8 @@ class BlogSlider extends React.Component {
               cursor: `pointer`,
               border: `none`,
               background: `none`,
-              color: `#FFF`,
-              opacity: `${index === slide ? 1 : 0.5}`,
+              color: `#DDD`,
+              opacity: `${index === slide ? 1 : 0.2}`,
             }}>
             {el}
           </button>

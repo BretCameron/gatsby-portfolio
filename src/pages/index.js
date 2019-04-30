@@ -160,6 +160,7 @@ class IndexPage extends React.Component {
                   letterSpacing: `2.5px`,
                   margin: `5px 0 100px 0`,
                   textTransform: `uppercase`,
+                  // textShadow: `2px 2px 5px black`,
                 }}>Web Development Blog
                 </h2>
               </div>
