@@ -132,7 +132,7 @@ class BlogSlider extends React.Component {
           style={{
             display: `inline-block`,
             padding: `0 0.5rem`,
-            margin: 0,
+            margin: `10px 0 50px 0`,
             cursor: `pointer`,
             border: `none`,
             background: `none`,
