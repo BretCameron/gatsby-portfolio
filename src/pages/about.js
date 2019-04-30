@@ -182,7 +182,6 @@ class IndexPage extends React.Component {
                   style={{
                     color: `#DDD`,
                     padding: `50px 0px 20px 0px`,
-                    maxWidth: `600px`
                   }}>
                   <p style={{
                     margin: `15px 0`,
