@@ -8,29 +8,59 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
 import Header from "./header"
+import Navigation from "./navigation"
 import "./layout.css"
 
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+        {
+          background:file(relativePath:{eq:"josh-rose-506979-unsplash.jpg"}) {
+            childImageSharp {
+              fluid (maxWidth: 50) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
-      }
     `}
     render={data => (
       <>
-        <main>{children}</main>
-        <footer style={{ textAlign: `center` }}><hr />
-          © Bret Cameron {new Date().getFullYear()}<br /><span style={{ fontSize: `0.9rem` }}>Built with <i>React.js</i> and <i>Gatsby</i></span>
-          <br /><br />
-        </footer>
-        {/* </div> */}
+
+        <BackgroundImage
+          tag="section"
+          fluid={data.background.childImageSharp.fluid}
+          backgroundColor={`#000`}
+          style={{
+            color: `white`,
+            width: `100%`,
+            // backgroundImage: `url(${data.background.publicURL})`,
+            // backgroundRepeat: `no-repeat`,
+            // backgroundSize: `cover`,
+            // backgroundPosition: `top left`,
+            minHeight: `100vh`,
+            display: `flex`,
+            flexDirection: `column`
+          }}
+        >
+          <main style={{
+            flex: `auto`,
+          }}>
+            <Navigation />
+            {children}
+          </main>
+          <footer style={{
+            textAlign: `center`,
+            flexShrink: 0,
+            background: `#000`
+          }}><hr />
+            © Bret Cameron {new Date().getFullYear()}<br /><span style={{ fontSize: `0.9rem` }}>Built with <i>React.js</i> and <i>Gatsby</i></span>
+            <br /><br />
+          </footer>
+        </BackgroundImage>
       </>
     )}
   />

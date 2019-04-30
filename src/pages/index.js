@@ -141,7 +141,7 @@ class IndexPage extends React.Component {
           <Layout>
             <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
             <div>
-              <BackgroundImage tag="section"
+              {/* <BackgroundImage tag="section"
                 style={{
                   color: `white`,
                   minHeight: `100vh`,
@@ -149,28 +149,29 @@ class IndexPage extends React.Component {
                 }}
                 fluid={data.background.childImageSharp.fluid}
                 backgroundColor={`#000`}
-              >
+              > */}
 
 
-                <div style={{ textAlign: `center` }}>
-                  <h1 style={{ margin: `15vh 0 0 0` }}>Bret Cameron</h1>
-                  <h2 style={{
-                    fontWeight: `200`,
-                    fontSize: `1.4rem`,
-                    letterSpacing: `2.5px`,
-                    margin: `5px 0 100px 0`,
-                    textTransform: `uppercase`
-                  }}>Web Development Blog</h2>
-                </div>
+              <div style={{ textAlign: `center` }}>
+                <h1 style={{ padding: `10vh 0 0 0` }}>Bret Cameron</h1>
+                <h2 style={{
+                  fontWeight: `200`,
+                  fontSize: `1.4rem`,
+                  letterSpacing: `2.5px`,
+                  margin: `5px 0 100px 0`,
+                  textTransform: `uppercase`,
+                }}>Web Development Blog
+                </h2>
+              </div>
 
-                <div className="slider-container"
-                  style={{
-                    // background: `grey`, 
-                    width: `100%`,
-                  }}>
-                  <BlogSlider />
-                </div>
-              </BackgroundImage>
+              <div className="slider-container"
+                style={{
+                  // background: `grey`, 
+                  width: `100%`,
+                }}>
+                <BlogSlider />
+              </div>
+              {/* </BackgroundImage> */}
             </div>
 
           </Layout>

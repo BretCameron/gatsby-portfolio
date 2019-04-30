@@ -17,7 +17,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
@@ -28,7 +28,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
@@ -39,7 +39,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
@@ -50,7 +50,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
@@ -61,7 +61,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -72,7 +72,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -83,7 +83,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -94,7 +94,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -105,7 +105,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -116,7 +116,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -127,7 +127,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -138,7 +138,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -149,7 +149,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -160,7 +160,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -171,7 +171,7 @@ class BlogCard extends React.Component {
           fluid (
             maxWidth: 400
             quality: 90
-            traceSVG: { background: "#000", color: "#222" }
+            traceSVG: { background: "#000", color: "#555" }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }           
@@ -201,7 +201,6 @@ class BlogCard extends React.Component {
             >
 
               <Img style={{
-                overflow: `none`,
                 margin: 0,
                 width: `100%`,
                 height: `160px`,
