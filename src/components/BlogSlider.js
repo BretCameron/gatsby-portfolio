@@ -2,6 +2,9 @@ import React from "react"
 import BlogCard from "./BlogCard"
 import articles from "../data/articles"
 
+// TO DO: optimise images, add support for smaller height screens
+// limit zoom in ??? or prevent "0" card option, because that bugs
+
 class BlogSlider extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +38,7 @@ class BlogSlider extends React.Component {
     const { articles, leftmostCard, rightmostCard } = this.state;
     const spaceAvailable = Math.floor(window.innerWidth / 360);
     const currentCardsVisible = rightmostCard - leftmostCard;
-    const newLeftmostCard = Math.ceil(leftmostCard / spaceAvailable) * spaceAvailable;
+    const newLeftmostCard = Math.round(leftmostCard / spaceAvailable) * spaceAvailable;
     this.setState({
       leftmostCard: newLeftmostCard,
       rightmostCard: newLeftmostCard + spaceAvailable,
@@ -63,6 +66,7 @@ class BlogSlider extends React.Component {
             title={el.title}
             subtitle={el.subtitle}
             image={el.image}
+            query={el.graphqlQuery}
             link={el.link}
             date={el.date}
             readTime={el.readTime}
@@ -88,7 +92,6 @@ class BlogSlider extends React.Component {
       newState.leftmostCard += sliderInterval * (index - slide);
       newState.rightmostCard += sliderInterval * (index - slide);
       this.setState(newState);
-      console.log(newState);
     }
   }
 

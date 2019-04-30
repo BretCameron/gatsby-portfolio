@@ -144,7 +144,7 @@ class IndexPage extends React.Component {
               <BackgroundImage tag="section"
                 style={{
                   color: `white`,
-                  height: `100vh`,
+                  minHeight: `100vh`,
                   width: `100%`,
                 }}
                 fluid={data.background.childImageSharp.fluid}
